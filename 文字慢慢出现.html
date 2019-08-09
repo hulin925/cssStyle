@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 直播</title>
+  <style>
+  #words {
+    font: 1.05em 'Cinzel', serif;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    text-shadow: 0 0 25px rgba(254,254,255,0.85);
+    text-transform: lowercase;
+    margin: 2% 0;
+  }
+
+[class^="letter"] {
+  -webkit-transition: opacity 3s ease;
+  -moz-transition: opacity 3s ease;
+  transition: opacity 3s ease;
+}
+.letter-0  { transition-delay: 0.2s; }
+.letter-1  { transition-delay: 0.4s; }
+.letter-2  { transition-delay: 0.6s; }
+.letter-3  { transition-delay: 0.8s; }
+.letter-4  { transition-delay: 1.0s; }
+.letter-5  { transition-delay: 1.2s; }
+.letter-6  { transition-delay: 1.4s; }
+.letter-7  { transition-delay: 1.6s; }
+.letter-8  { transition-delay: 1.8s; }
+.letter-9  { transition-delay: 2.0s; }
+.letter-10 { transition-delay: 2.2s; }
+.letter-11 { transition-delay: 2.4s; }
+.letter-12 { transition-delay: 2.6s; }
+.letter-13 { transition-delay: 2.8s; }
+.letter-14 { transition-delay: 3.0s; }
+.letter-15 { transition-delay: 3.2s; }
+.letter-16 { transition-delay: 3.4s; }
+.letter-17 { transition-delay: 3.6s; }
+.letter-18 { transition-delay: 3.7s; }
+.letter-19 { transition-delay: 3.8s; }
+.letter-20 { transition-delay: 3.9s; }
+.letter-21 { transition-delay: 4.0s; }
+.letter-22 { transition-delay: 4.1s; }
+.letter-23 { transition-delay: 4.2s; }
+.letter-24 { transition-delay: 4.3s; }
+.letter-25 { transition-delay: 4.4s; }
+.letter-26 { transition-delay: 4.5s; }
+.letter-27 { transition-delay: 4.6s; }
+.letter-28 { transition-delay: 4.7s; }
+.letter-29 { transition-delay: 4.8s; }
+.letter-30 { transition-delay: 4.9s; }
+.letter-31 { transition-delay: 5.0s; }
+.letter-32 { transition-delay: 5.1s; }
+.letter-33 { transition-delay: 5.2s; }
+.letter-34 { transition-delay: 5.3s; }
+.letter-35 { transition-delay: 5.4s; }
+.letter-36 { transition-delay: 5.5s; }
+.letter-37 { transition-delay: 5.6s; }
+.letter-38 { transition-delay: 5.7s; }
+.letter-39 { transition-delay: 5.8s; }
+.letter-40 { transition-delay: 5.9s; }
+.letter-41 { transition-delay: 6.0s; }
+.letter-42 { transition-delay: 6.1s; }
+.letter-43 { transition-delay: 6.2s; }
+.letter-44 { transition-delay: 6.3s; }
+.letter-45 { transition-delay: 6.4s; }
+.letter-46 { transition-delay: 6.5s; }
+.letter-47 { transition-delay: 6.6s; }
+.letter-48 { transition-delay: 6.7s; }
+.letter-49 { transition-delay: 6.8s; }
+.letter-50 { transition-delay: 6.9s; }
+.letter-51 { transition-delay: 7.0s; }
+.letter-52 { transition-delay: 7.1s; }
+.letter-53 { transition-delay: 7.2s; }
+.letter-54 { transition-delay: 7.3s; }
+.letter-55 { transition-delay: 7.4s; }
+.letter-56 { transition-delay: 7.5s; }
+.letter-57 { transition-delay: 7.6s; }
+.letter-58 { transition-delay: 7.7s; }
+.letter-59 { transition-delay: 7.8s; }
+.letter-60 { transition-delay: 7.9s; }
+.letter-61 { transition-delay: 8.0s; }
+.letter-62 { transition-delay: 8.1s; }
+.letter-63 { transition-delay: 8.2s; }
+.letter-64 { transition-delay: 8.3s; }
+.letter-65 { transition-delay: 8.4s; }
+.letter-66 { transition-delay: 8.5s; }
+.letter-67 { transition-delay: 8.6s; }
+.letter-68 { transition-delay: 8.7s; }
+.letter-69 { transition-delay: 8.8s; }
+.letter-70 { transition-delay: 8.9s; }
+.letter-71 { transition-delay: 9.0s; }
+.letter-72 { transition-delay: 9.1s; }
+.letter-73 { transition-delay: 9.2s; }
+.letter-74 { transition-delay: 9.3s; }
+.letter-75 { transition-delay: 9.4s; }
+.letter-76 { transition-delay: 9.5s; }
+.letter-77 { transition-delay: 9.6s; }
+.letter-78 { transition-delay: 9.7s; }
+.letter-79 { transition-delay: 9.8s; }
+.letter-80 { transition-delay: 9.9s; }
+.letter-81 { transition-delay: 10.0s; }
+.letter-82 { transition-delay: 10.1s; }
+.letter-83 { transition-delay: 10.2s; }
+.letter-84 { transition-delay: 10.3s; }
+.letter-85 { transition-delay: 10.4s; }
+.letter-86 { transition-delay: 10.5s; }
+.letter-87 { transition-delay: 10.6s; }
+.letter-88 { transition-delay: 10.7s; }
+.letter-89 { transition-delay: 10.8s; }
+.letter-90 { transition-delay: 10.9s; }
+.letter-91 { transition-delay: 11.1s; }
+.letter-92 { transition-delay: 11.2s; }
+.letter-93 { transition-delay: 11.3s; }
+.letter-94 { transition-delay: 11.4s; }
+.letter-95 { transition-delay: 11.5s; }
+.letter-96 { transition-delay: 11.6s; }
+.letter-97 { transition-delay: 11.7s; }
+.letter-98 { transition-delay: 11.8s; }
+.letter-99 { transition-delay: 11.9s; }
+.letter-100 { transition-delay: 12.0s; }
+.letter-101 { transition-delay: 12.1s; }
+.letter-102 { transition-delay: 12.2s; }
+.letter-103 { transition-delay: 12.3s; }
+.letter-104 { transition-delay: 12.4s; }
+.letter-105 { transition-delay: 12.5s; }
+.letter-106 { transition-delay: 12.6s; }
+.letter-107 { transition-delay: 12.7s; }
+.letter-108 { transition-delay: 12.8s; }
+.letter-109 { transition-delay: 12.9s; }
+.letter-110 { transition-delay: 13.0s; }
+.letter-111 { transition-delay: 13.1s; }
+.letter-112 { transition-delay: 13.2s; }
+.letter-113 { transition-delay: 13.3s; }
+.letter-114 { transition-delay: 13.4s; }
+.letter-115 { transition-delay: 13.5s; }
+.letter-116 { transition-delay: 13.6s; }
+.letter-117 { transition-delay: 13.7s; }
+.letter-118 { transition-delay: 13.8s; }
+.letter-119 { transition-delay: 13.9s; }
+.letter-120 { transition-delay: 14.0s; }
+.letter-121 { transition-delay: 14.1s; }
+.letter-122 { transition-delay: 14.2s; }
+.letter-123 { transition-delay: 14.3s; }
+.letter-124 { transition-delay: 14.4s; }
+.letter-125 { transition-delay: 14.5s; }
+.letter-126 { transition-delay: 14.6s; }
+.letter-127 { transition-delay: 14.7s; }
+.letter-128 { transition-delay: 14.8s; }
+.letter-129 { transition-delay: 14.9s; }
+.letter-130 { transition-delay: 15.0s; }
+.letter-131 { transition-delay: 15.1s; }
+.letter-132 { transition-delay: 15.2s; }
+.letter-133 { transition-delay: 15.3s; }
+.letter-134 { transition-delay: 15.4s; }
+.letter-135 { transition-delay: 15.5s; }
+.letter-136 { transition-delay: 15.6s; }
+.letter-137 { transition-delay: 15.7s; }
+.letter-138 { transition-delay: 15.8s; }
+.letter-139 { transition-delay: 15.9s; }
+.letter-140 { transition-delay: 16.0s; }
+.letter-141 { transition-delay: 16.1s; }
+.letter-142 { transition-delay: 16.2s; }
+.letter-143 { transition-delay: 16.3s; }
+.letter-144 { transition-delay: 16.4s; }
+.letter-145 { transition-delay: 16.5s; }
+.letter-146 { transition-delay: 16.6s; }
+.letter-147 { transition-delay: 16.7s; }
+.letter-148 { transition-delay: 16.8s; }
+.letter-149 { transition-delay: 16.9s; }
+.letter-150 { transition-delay: 17.0s; }
+.letter-151 { transition-delay: 17.1s; }
+.letter-152 { transition-delay: 17.2s; }
+.letter-153 { transition-delay: 17.3s; }
+.letter-154 { transition-delay: 17.4s; }
+.letter-155 { transition-delay: 17.5s; }
+.letter-156 { transition-delay: 17.6s; }
+.letter-157 { transition-delay: 17.7s; }
+.letter-158 { transition-delay: 17.8s; }
+.letter-159 { transition-delay: 17.9s; }
+.letter-160 { transition-delay: 18.0s; }
+.letter-161 { transition-delay: 18.1s; }
+
+
+
+
+#words {
+  visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  font-size:2rem;
+} 
+#words.transition-in {
+  visibility: visible;
+}
+#words [class^="letter"] {
+  opacity: 0;
+}
+#words.transition-in [class^="letter"] {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+  <div id='words'>据了解，鸿蒙是一款基于微内核的全场景分布式OS，这是分布式架构首次用于终端OS，可以实现跨终端无缝协同体验。“微内核”是鸿蒙OS的特点之一。即微内核采用同一套操作平台，针对不同硬件能力的产品进行部署，并采用分布式架构，提升效率。对此余承东指出，Android有超过1亿行代码，内核就超过2000万行
+</div>
+	<!-- <div id="id_test_video" style="width:100%; height:auto;"></div> -->
+</body>
+
+<!-- <script src="http://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer.js" type="text/javascript"></script> -->
+ <script type="text/javascript">
+ 			// let id_test_video=document.querySelector('#id_test_video');
+            // (function(){
+            //    var player =  new TcPlayer("id_test_video", {
+            //            "m3u8": "",
+            //            "flv": "http://30000.liveplay.myqcloud.com/live/30000_c1d1360ab74411e9b04e6c92bf487b62.flv",
+            //            "autoplay" : true, 
+            //            "coverpic" : "",
+            //            "width" :  "1024",//视频的显示宽度，请尽量使用视频分辨率宽度
+            //            "height" : "768"//视频的显示高度，请尽量使用视频分辨率高度
+            //        });
+            //  })()
+            
+            letters('words');
+
+            function letters(id) {
+
+              var el = document.getElementById(id),
+                letters = el.innerHTML.replace('&', '&').split(''),
+                heading = '';
+              
+              for(var i = 0, n = letters.length, letter; i < n; i++) {
+                letter = letters[i].replace('&', '&');
+                heading += letter.trim() ? '<span class="letter-' + i + '">' + letter + '</span>' : ' ';
+              }
+              
+              el.innerHTML = heading;
+              setTimeout(function() { 
+                el.className = 'transition-in'; 
+              }, (Math.random() * 500) + 500);
+            }
+ </script>     
+
+</html>
