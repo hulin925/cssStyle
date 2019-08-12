@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>合伙人积分</title>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cfjf.sanhedao.com.cn/Public/Admin/css/EjectData.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cfjf.sanhedao.com.cn/Public/Admin/css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="https://cfjf.sanhedao.com.cn/Public/Admin/css/api.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1295119_wqdk62eagwb.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1304558_mqqy4o4a2q.css" />
+    <!-- 分享 -->
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1345679_ygrl8g991df.css" />
+    <style>
+        header {
+            color: #fff;
+            font-size: 20px;
+            width: 100%;
+            padding-top: 25px;
+            padding-bottom: 12px;
+            padding-left: 3%;
+        }
+
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            header {
+                padding-top: 35px;
+            }
+        }
+
+        header,
+        .username,
+        h3,
+        .left .leftDiv,
+        .left .number,
+        .left .leftDiv span,
+        .div2 {
+            font-family: "pingfangBold" !important;
+        }
+
+        .logbox {
+            position: relative;
+        }
+
+        .logbox .aui-col-xs-2 {
+            position: relative;
+        }
+
+        .logbox .tip {
+            background: #EA5A60;
+            color: #fff;
+            font-size: 12px;
+            padding: 0 5%;
+            height: 25px;
+            line-height: 25px;
+            position: absolute;
+            top: 2%;
+            left: 11%;
+            border-radius: 1rem;
+        }
+
+        .tip .tri {
+            display: inline-block;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid #EA5A60;
+            position: absolute;
+            left: 8%;
+            top: 56%;
+            transform: rotate(180deg);
+        }
+
+        .img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #35353F;
+            color: #fff;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .img img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .logbox {
+            width: 94%;
+            margin: 0 auto;
+            padding: 6% 0;
+        }
+
+        .logbox .aui-col-xs-6 {
+            padding-left: 4%;
+        }
+
+        .intro {
+            visibility: hidden;
+        }
+
+        .username {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 3%;
+        }
+
+        .viewDoc {
+            font-size: 14px;
+            color: #4494FE;
+        }
+
+        .logbox .xiaji {
+            width: 100px;
+            height: 30px;
+            background-color: #35353F;
+            border-radius: 1rem;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .xiaji img {
+            width: 18px;
+        }
+
+        .xiaji span {
+            font-size: 12px;
+            color: #fff;
+            margin-left: 3%;
+        }
+
+        .banner {
+            width: 94%;
+            margin: 0 auto;
+        }
+
+        .banner img {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        h3 {
+            color: #fff;
+            width: 94%;
+            margin: 5% auto;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3 span {
+            color: #fff;
+            background: #4494FE;
+            font-size: 12px;
+            border-radius: 3px;
+            padding: 0 1%;
+            margin-left: 2%;
+        }
+
+        .module {
+            width: 94%;
+            margin: 0 auto;
+            height: 280px;
+            display: flex;
+        }
+
+        .module>div {
+            height: 100%;
+        }
+
+        .left {
+            width: 58%;
+            background: url(https://cfjf.sanhedao.com.cn/Public/Admin/image/bg1.png) center no-repeat;
+            background-size: cover;
+            margin-right: 3%;
+            border-radius: 5px;
+            padding: 0 2%;
+        }
+
+        .left .leftDiv {
+            margin-top: 38px;
+            font-size: 20px;
+            color: #AB7E3A;
+        }
+
+        .left .leftDiv span {
+            font-size: 13px;
+            margin-top: 3%;
+        }
+
+        .left .leftDiv span .aui-iconfont {
+            font-size: 0.5rem;
+        }
+
+        .left .number {
+            font-size: 35px;
+            color: #AB7E3A;
+        }
+
+        .left .number span {
+            font-size: 13px;
+        }
+
+        .right {
+            width: 39%;
+        }
+
+        .right>div {
+            height: 135px;
+            border-radius: 5px;
+        }
+
+        .right .rightUp {
+            background: #EA5A60;
+            margin-bottom: 10px;
+        }
+
+        .right .rightDown {
+            background: #4494FE;
+        }
+
+        .div1,
+        .div2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        .div1 {
+            font-size: 18px;
+            padding-top: 30px;
+        }
+
+        .div2 {
+            font-size: 20px;
+            margin-top: 12px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5%;
+        }
+
+        .tab div:first-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tab div:first-child div {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 43px;
+        }
+
+        .tab1 div:first-child div {
+            background: #4494FE;
+        }
+
+        .tab1 div:first-child div img {
+            width: 13px;
+        }
+
+        .tab2 div:first-child div img {
+            width: 16px;
+        }
+
+        .tab2 div:first-child div {
+            background: #EA5A60;
+        }
+
+        .tab div:last-child {
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+        }
+
+
+
+
+
+        .AdvertisementPopupBox{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,0.8);
+            z-index: 99;
+            display:none;
+        }
+        .AdvertisementPopup{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width:90%;
+            background-color:#fff;
+            z-index: 999;
+        }
+        .clerfix{
+            zoom:1;
+        }
+        .clerfix:after{
+            content:'';
+            display:block;
+            visibility:hidden;
+            height:0;
+            clear:both;
+        }
+        .AdvertisementPopup .xzTitle{
+            text-align:center;
+            line-height:2rem;
+            font-size:0.9rem;
+            background-color:#f2f2f2;
+            border-bottom:1px solid #ddd;
+        }
+        .AdvertisementPopup .xzList{
+            text-align:center;
+            padding:0 1rem;
+        }
+        .AdvertisementPopup .xzList li{
+            border:1px solid #ddd;
+            padding:0.8rem;
+            margin-bottom:1rem;
+            position:relative;
+        }
+        .AdvertisementPopup .xzList li .icon-xuanzhong{
+            position:absolute;
+            top:-0.4rem;
+            right:-0.3rem;
+            color:#3387ef;
+            font-size:2rem;
+            /*display: none;*/
+        }
+        .AdvertisementPopup .xzList .activeChoose{
+            border:1px solid #3387ef;
+        }
+        .AdvertisementPopup .nweLeft{
+            width:30%;
+            float:left;
+            line-height:1rem;
+            border-right:1px solid #ddd;
+            padding-right:2%;
+        }
+        .AdvertisementPopup .nweLeft p:nth-child(1){
+            border-bottom:1px dashed #ccc;
+            padding-bottom:1px;
+        }
+        .AdvertisementPopup .newRight{
+            width:70%;
+            float:right;
+            padding-left:2%;
+            position:relative;
+        }
+        .AdvertisementPopup .newRight p{
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            word-break: break-all;
+        }
+        #details{
+            position:absolute;
+            right:0.2rem;
+            bottom:0;
+            font-size:0.6rem;
+            color:#3695ff;
+            line-height:0.9rem;
+        }
+        #details i{
+            vertical-align:bottom;
+        }
+        .AdvertisementPopup .AdvertisementPopupClose{
+            position:absolute;
+            top:-2px;
+            right:0;
+            font-size:1rem;
+            width:2rem;
+            height:2rem;
+            text-align:center;
+            line-height:2rem;
+            color:#9d9d9d;
+        }
+        .AdvertisementPopup .purchase{
+            text-align:center;
+            line-height:2rem;
+            width:200px;
+            background-color:#3387ef;
+            margin:0 auto 1rem;
+            color:#fff;
+        }
+        .AdvertisementPopup .purchase:active{
+            background-color:#77b0f8;
+        }
+        .AdvertisementPopup .chooseService{
+            text-align:center;
+            line-height:1.5rem;
+            margin-bottom:1rem;
+        }
+        .AdvertisementPopup .chooseService span{
+            background-color:#f3f3f3;
+            border:1px solid #ddd;
+            border-top:none;
+        }
+        .AdvertisementPopup .chooseService span:nth-child(1){
+            float:left;
+            width:50%;
+        }
+        .AdvertisementPopup .chooseService span:nth-child(2){
+            float:right;
+            width:50%;
+        }
+        .AdvertisementPopup .chooseService .active{
+            background-color:#fff;
+            border:none;
+        }
+        .AdvertisementPopup #serviceList1{
+            display:none;
+        }
+
+
+
+
+
+
+
+
+        .payBox {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #2B2D34;
+            padding: 0 3%;
+            padding-bottom: 8%;
+            display: none;
+            z-index:999;
+        }
+
+        .payBox .title {
+            text-align: center;
+            padding: 4% 0;
+            color: #fff;
+            font-size: 16px;
+            position: relative;
+            border-bottom: 1px solid #666;
+        }
+
+        .title img {
+            width: 20px;
+            position: absolute;
+            left: 0;
+            top: 40%;
+        }
+
+        .payway {
+            padding: 5% 0;
+            border-bottom: 1px solid #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .payway div {
+            color: #fff;
+        }
+
+        .payway div:last-child {
+            display: flex;
+            align-items: center;
+        }
+
+        .payway div span {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #666;
+        }
+
+        .payway.active div span {
+            background: #4494FE;
+            border: 2px solid #fff;
+        }
+
+        .payway img {
+            width: 30px;
+        }
+
+        /* button {
+            width: 100%;
+            border-radius: 3px;
+            background: #4494FE;
+            color: #fff;
+            margin-top: 10%;
+            height: 50px
+        } */
+
+        .btn-pay {
+            height: 3.0rem;
+            margin: 1rem 0 0 0;
+            padding: 0.25rem 3%;
+        }
+
+        .btn-pay button {
+            width: 100%;
+            height: 100%;
+            background: #4494FE;
+            color: #fff;
+        }
+
+        .payBox button {
+            color: #fff;
+            height: 2.25rem;
+            margin-top: 2rem;
+            background-color: #4494FE;
+            width: 100%;
+        }
+
+
+
+
+        #detailed{
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index:999999999;
+            display: none;
+        }
+        #detailed .detailedContent .detailedBox p{
+            color:#fff;
+            line-height:1rem;
+
+        }
+        #detailed .detailedContent .detailedBox p:nth-child(2){
+            line-height:2rem;
+        }
+        #detailed .detailedContent{
+            position:absolute;
+            width:70%;
+            background: #25262B;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        #detailed .detailedTitle{
+            text-align:right;
+        }
+        #detailed .detailedTitle span{
+            color:#fff;
+            padding:0 0.5rem;
+        }
+        .detailedContent .detailedBox{
+            padding:0 0.5rem;
+        }
+
+
+
+		/*微信分享*/
+		#wechatSharing{
+			position:absolute;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			background-color:rgba(0,0,0,.6);
+			z-index:9999999999;
+			display:none;
+		}
+		#wechatSharing p{
+			color:#fff;
+			text-align:center;
+			font-size:1rem;
+			font-family:'楷体' !important;
+			line-height:1.5rem;
+		}
+		#wechatSharing div{
+			padding:1rem 2rem;
+			text-align:right;
+		}
+
+		#wechatSharing .icon-zhishijiantou--{
+			color:#fff;
+			font-size:4rem;
+		}
+        
+    </style>
+</head>
+
+<body>
+    <header>合伙人中心</header>
+    <div class="logbox aui-row">
+        <div class="aui-col-xs-2 login">
+            <div class="img">登录</div>
+        </div>
+        <div class="tip">登录赚F积分
+            <span class="tri"></span>
+        </div>
+        <div class="aui-col-xs-6 intro">
+            <div class="username"></div>
+            <div class="viewDoc">查看个人主页</div>
+        </div>
+        <div class="aui-col-xs-4" tapmode onclick="jumpLog('lowLevel','https://cfjf.sanhedao.com.cn/Public/Admin/html/lowLevel.html')">
+            <div class="xiaji">
+                <img src="https://cfjf.sanhedao.com.cn/Public/Admin/image/xiaji.svg" alt=''>
+                <span>我的推广</span>
+            </div>
+        </div>
+    </div>
+    <div class="aui-row nav">
+        <div class="tab aui-col-xs-6 tab1" tapmode onclick="jumpLog('subscribe', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/subscribe.html')">
+            <div>
+                <div class=""><img src="https://cfjf.sanhedao.com.cn/Public/Admin/image/rengou.svg" alt=""></div>
+            </div>
+            <div style="margin-top:3%">我要认购</div>
+        </div>
+        <div class="tab aui-col-xs-6 tab2" tapmode onclick="jumpLog('remise', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/remise.html')">
+            <div>
+                <div class=""><img src="https://cfjf.sanhedao.com.cn/Public/Admin/image/churang.svg" alt=""></div>
+            </div>
+            <div style="margin-top:3%">我要出让</div>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="https://cfjf.sanhedao.com.cn/Public/Admin/image/banner.png">
+    </div>
+    <h3>F积分总量
+        <span>最新</span>
+    </h3>
+    <div class="aui-row module">
+        <div class="left">
+            <div class="leftDiv">
+                <span class="aui-pull-right given">详情
+                    <!-- <i class="aui-iconfont aui-icon-right"></i> -->
+                    <span>></span>
+                </span>我的F积分</div>
+            <div class="number total">0
+                <span>枚</span>
+            </div>
+            <div class="leftDiv">
+               <!--  <span class="aui-pull-right invite">去邀请
+                    <i class="aui-iconfont aui-icon-right"></i>
+                </span> -->
+            今日获得</div>
+            <div class="number today" id="today_get_sroce">0.00
+                <span>枚</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="rightUp">
+                <div class="div1">总网F积分</div>
+                <div class="sum div2">0</div>
+            </div>
+            <div class="rightDown">
+                <div class="div1">今日交易量</div>
+                <div class="todaySum div2">0</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="AdvertisementPopupBox">
+        <div class="AdvertisementPopup">
+            <div class="xzTitle">私人定制法律服务</div>
+            <div class="chooseService clerfix">
+                <span class="Edition active" onclick="tabService(this,1)">个人版</span>
+                <span class="Edition" onclick="tabService(this,2)">企业版</span>
+            </div>
+            <ul class="xzList" id="serviceList"></ul>
+            <ul class="xzList" id="serviceList1"></ul>
+            <div class="purchase">立即购买服务</div>
+            <div class="AdvertisementPopupClose" onclick="closeChoose()">X</div>
+        </div>
+    </div>
+    
+    <div class="payBox">
+        <div class="title">付款<img class='close' src="https://cfjf.sanhedao.com.cn/Public/Admin/image/xzclose.png" alt=""></div>
+        <div class="payway aui-row active" data-payway='wywxpay' onclick='handlePayClick(this)'>
+            <div class="aui-col-xs-2"><img src="https://cfjf.sanhedao.com.cn/Public/Admin/image/xzf.png" alt=""></div>
+            <div class="aui-col-xs-8">微信支付</div>
+            <div class="aui-col-xs-2"><span></span></div>
+        </div>
+        <button id="xzPay">立即付款（<span class="xzTotal">0</span>元）</button>
+    </div>
+
+    <div id="detailed">
+        <div class="detailedContent">
+            <div class="detailedTitle"><span onclick="detailedClose()">X</span></div>
+            <div class="detailedBox">
+                <p class="detailedTop"></p>
+                 <p class="detailedBottom"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="wechatSharing">
+    	<div>
+			<i class="iconfont icon-zhishijiantou--"></i>
+    	</div>
+    	<p>请点击右上角</p>
+    	<p>将它发送给指定朋友</p>
+    	<p>或分享到朋友圈</p>
+    </div>
+
+</body>
+<script type="text/javascript" src="https://cfjf.sanhedao.com.cn/Public/Admin/script/jquery.min.js"></script>
+<script type="text/javascript" src="https://cfjf.sanhedao.com.cn/Public/Admin/script/aui-toast.js"></script>
+<script type="text/javascript" src="https://cfjf.sanhedao.com.cn/Public/Admin/script/common.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<!-- 微信SDK -->
+<!-- <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js" type="text/javascript"></script> -->
+<script type="text/javascript">
+	function bodyScroll(event){  
+	    event.preventDefault();  
+	} 
+	
+
+    
+    /*验证登录*/
+    checklogin();
+
+     
+    
+    function getQuery(name) {//获取地址栏信息
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+      };
+
+    // var dataList={};
+    var xzPriceID;//服务ID
+    var xzChoosePrice;//服务价格
+    $(function(){
+    	// document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+     //        WeixinJSBridge.call('hideOptionMenu');
+     //    });
+        $.ajax({
+            type:"POST",
+            url:url+Home_integralpool,
+            dataType:'json',
+            async:true,
+            // timeout: 0,
+            crossDomain: true,
+            data:{ 
+                uid:uid,
+                token:token
+            },
+            success:function(ret) {
+                if(ret.code == 10000){
+                    // 总网F积分
+                    var all_score = ret.data.all_score;
+                    // 今日交易量
+                    var today_transaction = ret.data.today_transaction;
+                    // 主页广告
+                    var index_img = ret.data.index_img;
+
+                    $('.rightUp .sum').text(all_score);
+                    $('.rightDown .todaySum').text(today_transaction);
+                    $('.banner img').attr("src",index_img);
+                    $('#today_get_sroce').text(ret.data.today_get_sroce);
+                    if(token){
+                        localStorage.setItem("token",ret.token);
+                        localStorage.setItem("score",ret.data.score);
+                        localStorage.setItem("headpoint",ret.data.headpoint);
+                        localStorage.setItem("name",ret.data.real_name);
+                        localStorage.setItem("today_get_sroce",ret.data.today_get_sroce);
+                        $(".total").html(ret.data.score+"<span>枚</span>");
+                        if (ret.data.headpoint != '0') 
+                        {
+                            $('.login .img').html("<img src="+ret.data.headpoint+">");
+                        }
+                    
+                        $('.intro .username').text(ret.data.real_name);
+                        $('.intro').css({visibility:'visible'});
+                        $('.tip').css({display:"none"});
+                        
+                    }
+                }else{
+                    // failTip(ret.msg);
+                }
+            },
+            error:function(err){
+                // failTip("系统繁忙");
+                console.log(err); 
+            }
+        });
+        $('.login .img').click(function(){
+            if($(this).text() == "登录"){
+                // jump('login', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/login.html');
+            }else{
+                jump('personalDoc', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/personalDoc.html');
+            }
+        })
+        $(".viewDoc").click(function(){
+            jump('personalDoc', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/personalDoc.html');
+        })
+        //邀请
+        // $('.invite').click(function () {
+        //     jumpLog('openAccount', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/openAccount.html')
+        // });
+        //详情
+        $('.given').click(function () {
+            jumpLog('givenRecord', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/givenRecord.html');
+        });
+        
+        //banner
+        $('.banner').click(function () {
+        	var data={
+                url:'https://cfjf.sanhedao.com.cn/jfShar/html/helpCenter.html?fxUid=',
+                describe:'注册赚积分',
+                title:'芯汇法务云',
+                img:'https://web.3fgj.com/imgVue/lawyer.png'
+            }
+
+        	var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
+	        if (ua.match(/MicroMessenger/i) == "micromessenger") {//在微信中打开
+		        WeixinJSBridge.call('showOptionMenu');//显示微信分享
+
+	        	$('#wechatSharing').css({'display':'block'});
+	        	document.body.addEventListener('touchmove',bodyScroll,false);
+	        	$('body').css({'position':'fixed',"width":"100%"}); 
+		        // document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		     //        WeixinJSBridge.call('hideOptionMenu');
+		     //    });
+
+        		var selfUrl=window.location.href;
+        		$.ajax({
+        			type:'POST',
+        			url:'https://xhfwy3.sanhedao.com.cn/public/index.php/uapi/v4/home/sharesign',
+        			data:{
+        				url:selfUrl
+        			},
+        			success:function(ret){
+        				var weixinData=JSON.parse(ret);
+            //              var weixin= eval("("+weixinData+")");
+        				if(Number(weixinData.code)==10000){
+        					console.log(JSON.stringify(weixinData.message))
+        					var nowData=weixinData.message;
+        					wx.config({
+						        debug:false,// 是否开启调试模式
+						        appId:nowData.appId,//appid
+						        timestamp:nowData.timestamp,// 时间戳
+						        nonceStr:nowData.nonceStr,// 随机字符串
+						        signature:nowData.signature,// 签名
+						        jsApiList:[
+						         'onMenuShareAppMessage',
+                                 'onMenuShareTimeline',
+                                 'hideMenuItems'
+						        ]// 需要使用的JS接口列表	
+						     })
+
+						wx.ready(function(){
+							wx.hideMenuItems({//微信隐藏项
+								menuList: ['menuItem:share:qq',"menuItem:share:QZone","menuItem:copyUrl","menuItem:openWithQQBrowser","menuItem:openWithSafari","menuItem:favorite"] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+							});
+                            
+//                             wx.scanQRCode({
+//     desc: 'scanQRCode desc',
+//     needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+//     scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+//     success: function (res) {
+//     var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+//     console.log(result)
+// }
+// });
+  //                         wx.updateAppMessageShareData({ 
+  //   title: '馨悦名邸', // 分享标题
+  //   desc: '分享标题', // 分享描述
+  //   link: 'https://cfjf.sanhedao.com.cn/Public/Admin/html/VIP.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+  //   imgUrl: 'https://huodong.quanzhuejia.com/h5_share_03.jpg', // 分享图标
+  //   success: function () {
+  //       alert('sdada')
+  //     // 设置成功
+  //   }
+  // })
+  								//分享给朋友
+								wx.onMenuShareAppMessage({
+								    title: '合伙人积分',
+								    desc: 'F积分是芯汇合伙人区块链价值体系中的度量标准，通过推广等不同的方式，发放给合伙人。在持有F积分的期间合伙人将会获得芯汇区块链价值体系所产生的增值收益。',
+								    link: 'https://cfjf.sanhedao.com.cn/jfShar/html/helpCenter.html?fxUid='+localStorage.getItem('uid'),
+								    imgUrl: 'https://web.3fgj.com/imgVue/lawyer.png',
+								    type: 'link',
+								    dataUrl: 'https://cfjf.sanhedao.com.cn/jfShar/html/helpCenter.html?fxUid='+localStorage.getItem('uid'),
+								    success: function () {
+								    	WeixinJSBridge.call('hideOptionMenu');//隐藏微信分享
+								    	$('#wechatSharing').css({'display':'none'})//隐藏分享背景
+								    	document.body.addEventListener('touchmove',bodyScroll,false);
+										$('body').css({'position':'initial',"height":"auto"}); 
+
+								    }, cancel: function () {
+
+								    }
+								});
+
+					            // 分享到朋友圈
+					            wx.onMenuShareTimeline({
+					                title:'合伙人积分',// 分享标题
+					                link:'https://cfjf.sanhedao.com.cn/jfShar/html/helpCenter.html?fxUid='+localStorage.getItem('uid'),// 分享链接
+					                imgUrl:'https://web.3fgj.com/imgVue/lawyer.png',// 分享图标https://huodong.quanzhuejia.com/h5_share_03.jpg
+					                success:function(){
+					                	WeixinJSBridge.call('hideOptionMenu');//隐藏微信分享
+					                	$('#wechatSharing').css({'display':'none'})//隐藏分享背景
+					                	document.body.addEventListener('touchmove',bodyScroll,false);
+										$('body').css({'position':'initial',"height":"auto"}); 
+					                },
+					                cancel:function(){
+
+					                }
+					            })
+
+						    });
+							// wx.checkJsApi({
+				   //                jsApiList: ['onMenuShareAppMessage','onMenuShareTimeline'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+				   //                success: function(res) {
+				   //                	console.log(res,456789)
+				   //                    // 以键值对的形式返回，可用的api值true，不可用为false
+				   //                    // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+				   //                }
+				   //            });
+							wx.error(function(res){
+								// config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+							});
+        				}else{
+
+        				}
+        			}
+        		})
+
+	        }else{
+	        	 // jumpLog('openAccount', 'https://cfjf.sanhedao.com.cn/Public/Admin/html/openAccount.html')
+	            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+	              //Ios
+	              window.webkit.messageHandlers.share.postMessage(data);
+	            } else if (/(Android)/i.test(navigator.userAgent)) {
+	              //Android终端
+	              window.AndroidMethod.share(JSON.stringify(data));//android方法
+	            }
+	        }
+            
+           
+        });
+    })
+
+
+
+
+    
+    $('.purchase').click(function(){//立即购买
+        var nowMoney=$('.xzTotal').html();
+
+        // let now=$('.xzTotal').html();
+        if(nowMoney!=0){
+            $('.payBox').slideDown();//弹出支付
+        }else{
+            failTip('请选择你需要的定制服务！')
+        }
+        
+    })
+
+    var xzOpenid=localStorage.getItem('xzOpen');
+    var xzFxUid='';
+    if(localStorage.getItem('fxUid')){
+        xzFxUid=localStorage.getItem('fxUid');
+    }else{
+        xzFxUid="";
+    }
+    $('#xzPay').click(function(){//立即付款
+        var payway;
+        if(ua.match(/MicroMessenger/i)=="micromessenger"){
+                payway="wxpay"
+            }else{
+                payway = "wywxpay";
+            }
+        if(payway == "wxpay"){
+                $.ajax({
+                    type:"POST",
+                    url:'https://cfjf.sanhedao.com.cn/Api/Index/index/do/Taocan/ac/add',
+                    dataType:'json',
+                    async:true,
+                    // timeout: 1000,
+                    crossDomain: true,
+                    data:{ 
+                        uid: localStorage.getItem('uid'),
+                        token: localStorage.getItem('token'),
+                        total: xzChoosePrice,//xzChoosePrice
+                        tid:xzPriceID,
+                        payway: payway,
+                        openid:xzOpenid,
+                        tjuid:xzFxUid
+                    },
+                    success:function(ret) {
+                        // var timestamp = Math.round(new Date().getTime()/1000).toString();
+                        if(ret.code == 10000){
+                            // localStorage.setItem('token',ret.token);
+                            // token = ret.token;
+                            var weixinData=JSON.stringify(ret.data);
+                            var weixin= eval("("+weixinData+")");
+                            var timestamp=weixin.timestamp.toString();
+                            // location.href = ret.data;
+                            function onBridgeReady(){
+                               WeixinJSBridge.invoke(
+                                  'getBrandWCPayRequest', {
+                                     "appId":weixin.appid,     //公众号名称，由商户传入     
+                                     "timeStamp":timestamp,         //时间戳，自1970年以来的秒数     
+                                     "nonceStr":weixin.nonce_str, //随机串     
+                                     "package":"prepay_id="+weixin.prepay_id,     
+                                     "signType":"MD5",         //微信签名方式：     
+                                     "paySign":weixin.sign //微信签名 
+                                  },
+                                  function(res){
+                                    var msg = res.err_msg; 
+                                  if(msg == "get_brand_wcpay_request:ok" ){
+                                    window.location.href="https://cfjf.sanhedao.com.cn/Public/Admin/html/VIP.html";
+                                  // 使用以上方式判断前端返回,微信团队郑重提示：
+                                        //res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
+                                  } else if(msg == "get_brand_wcpay_request:cancel") { 
+                                            var err_msg = "您取消了微信支付"; 
+                                            failTip(err_msg); 
+                                        } else if (res.err_code == 3) { 
+                                            var err_msg = "您正在进行跨号支付正在为您转入扫码支付......"; 
+                                            failTip(err_msg); 
+                                        } else if (msg == "get_brand_wcpay_request:fail") { 
+                                            var err_msg = "微信支付失败错误信息：" + res.err_desc; 
+                                            failTip(err_msg); 
+                                        } else { 
+                                            var err_msg = msg + "" + res.err_desc; 
+                                            failTip(err_msg); 
+                                        } 
+                               }); 
+                            }
+                            if (typeof WeixinJSBridge == "undefined"){
+                               if( document.addEventListener ){
+                                   document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                               }else if (document.attachEvent){
+                                   document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+                                   document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                               }
+                            }else{
+                               onBridgeReady();
+                            }
+                        }else if(ret.code == 10010){
+                            logDietime();
+                        }else if(ret.code == 10001){
+                            // localStorage.setItem('token',ret.token);
+                            // token = ret.token;
+                            failTip(ret.msg);
+                        }else{
+                            failTip(ret.msg);
+                        }
+                    },
+                    error:function(err){
+                        failTip("系统繁忙");
+                        console.log(err); 
+                    }
+                });
+            }else if(payway == "wywxpay"){
+                $.ajax({
+                    type:"POST",
+                    url:'https://cfjf.sanhedao.com.cn/Api/Index/index/do/Taocan/ac/add',
+                    dataType:'json',
+                    async:true,
+                    // timeout: 1000,
+                    crossDomain: true,
+                    data:{ 
+                        uid: localStorage.getItem('uid'),
+                        token: localStorage.getItem('token'),
+                        tid: xzPriceID,
+                        total: xzChoosePrice,//xzChoosePrice
+                        payway: payway,
+                        tjuid:xzFxUid
+                    },
+                    success:function(ret) {
+                        if(ret.code == 10000){
+                            // token = ret.token; https://cfjf.sanhedao.com.cn/Application/Admin/View/Index/index1.html
+                            location.href = ret.data+'&redirect_url=https://cfjf.sanhedao.com.cn/Public/Admin/html/VIP.html';
+                        }else if(ret.code == 10010){
+                            logDietime();
+                        }else if(ret.code == 10001){
+                            // localStorage.setItem('token',ret.token);
+                            // token = ret.token;
+                            failTip(ret.msg);
+                        }else{
+
+                            failTip(ret.msg);
+                            // failTip("系统繁忙");
+                        }
+                    },
+                    error:function(err){
+                        failTip("系统繁忙");
+                        console.log(err); 
+                    }
+                });
+            }
+    })
+
+
+    var dataList=[];//存储详情数据
+    $.ajax({//获取弹窗内容
+            type:"POST",
+            url:"https://cfjf.sanhedao.com.cn/Api/Index/index/do/Taocan/ac/show",
+            dataType:'json',
+            crossDomain: true,
+            success:function(res){
+                if(Number(res.code)==10000){
+                    localStorage.setItem('PopupContent',JSON.stringify(res))
+                    let price=res.data.geren;
+                    let priceQ=res.data.qiye;
+                    dataList = price.concat(priceQ)
+                    for (var i = 0; i < price.length; i++) {
+                        let nowLength=price[i].describe.length;
+                        if(nowLength>26){
+                            var slide = '<li class="clerfix" onclick="choosePrice(this,'+price[i].id+')"><div class="nweLeft">'+
+                            '<p class="price">'+price[i].price+'元/年</p>'+
+                            '<p>'+price[i].name+'</p></div><div class="newRight"><p>'+price[i].describe+'</p></div><span id="details" onclick="pushDetails('+price[i].id+')">详情<i class="iconfont icon-xiala" style="margin-bottom:-0.1rem;display:inline-block;color:#3695ff;"></i></span></li>';
+                            $("#serviceList").append(slide);
+                        }else{
+                            var slide = '<li class="clerfix" onclick="choosePrice(this,'+price[i].id+')"><div class="nweLeft">'+
+                            '<p class="price">'+price[i].price+'元/年</p>'+
+                            '<p>'+price[i].name+'</p></div><div class="newRight"><p>'+price[i].describe+'</p></div></li>';
+                            $("#serviceList").append(slide);
+                        }
+                        
+                    }
+                    for (var i = 0; i < priceQ.length; i++) {
+                        let nowLength=priceQ[i].describe.length;
+                        if(nowLength>26){
+                            var slide1 = '<li class="clerfix" onclick="choosePrice(this,'+priceQ[i].id+')"><div class="nweLeft">'+
+                            '<p class="price">'+priceQ[i].price+'元/年</p>'+
+                            '<p>'+priceQ[i].name+'</p></div><div class="newRight"><p>'+priceQ[i].describe+'</p></div><span id="details" onclick="pushDetails('+priceQ[i].id+')">详情<i class="iconfont icon-xiala" style="margin-bottom:-0.1rem;display:inline-block;color:#3695ff;"></i></span></li>';
+                            $("#serviceList1").append(slide1);
+                        }else{
+                            var slide1 = '<li class="clerfix" onclick="choosePrice(this,'+priceQ[i].id+')"><div class="nweLeft">'+
+                            '<p class="price">'+priceQ[i].price+'元/年</p>'+
+                            '<p>'+priceQ[i].name+'</p></div><div class="newRight"><p>'+priceQ[i].describe+'</p></div></li>';
+                            $("#serviceList1").append(slide1);
+                        }
+                        
+                    }
+                }
+            }
+        })
+
+        $.ajax({//判断是否购买律师服务
+            type:"POST",
+            url:"https://cfjf.sanhedao.com.cn/Api/Index/index/do/Taocan/ac/showall",
+            data:{
+                uid:localStorage.getItem('uid'),
+                token:localStorage.getItem('token')
+            },
+            success:function(res){
+                if(Number(res.code)==10000){
+                    localStorage.setItem('stateService','true');
+                }else{
+                    localStorage.setItem('stateService','false');
+                }
+            }
+        })
+
+
+
+    $('.close').click(function(){
+            $(".payBox").slideUp();//隐藏支付
+        });
+
+    function choosePrice(_this,index){//点击获取内容
+        $('.clerfix').removeClass('activeChoose');
+        $('.clerfix i').removeClass('icon-xuanzhong');
+        $(_this).addClass('activeChoose');
+        $(_this).append('<i class="iconfont icon-xuanzhong"></i>');
+        let data=$(_this).find('.price').html();
+        xzPriceID=index;
+        let datas=data.split("元")
+        xzChoosePrice=datas[0];
+        $('.xzTotal').html(datas[0])
+    }
+    function closeChoose(){//关闭弹窗
+        $('.AdvertisementPopupBox').css({'display':'none'});
+        $(".payBox").slideUp();//隐藏支付
+    }
+    function tabService(_this,index){//切换个人和企业
+        $('.Edition').removeClass('active');
+        $(_this).addClass('active');
+        if(index==1){
+            $('#serviceList').css({'display':"block"});
+            $('#serviceList1').css({'display':"none"});
+        }else{
+            $('#serviceList').css({'display':"none"});
+            $('#serviceList1').css({'display':"block"});
+        }
+    }
+
+    function detailedClose(){//详情弹窗关闭
+        $('#detailed').css('display','none');
+    }
+    function pushDetails(index){//详情
+        console.log(index)
+        let obj = dataList.filter((item=>{
+            if(item.id==index) return true
+                return false
+        }))[0]
+        $('#detailed').css('display','block');
+        $('.detailedTop').html(obj.describe);
+        $('.detailedBottom').html(obj.name+' '+obj.price+'/年');
+    }
+
+    setUp();//弹出层
+    
+    
+</script>
+
+</html>
