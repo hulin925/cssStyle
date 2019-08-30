@@ -156,6 +156,41 @@
 
 	  $(".sure").click(function () { 
 	  	if($('#checked').is(':checked')){
+	  		// agree
+	  		let options = new FormData();
+	  		options.append('uid',getQuery('uid'))
+	  		options.append('token',getQuery('token'))
+	  		$.ajax({
+	  			url:'https://xhfwy3.sanhedao.com.cn/public/index.php/lapi/v3/user/sqqianyue',
+	  			type:'post',
+	  			processData:false,
+	        	contentType:false,
+	  			data:options,
+	  			success:function(data){
+	  				var list=data;
+	  				var data=JSON.parse(data)
+	  				if(data.code==10000){
+	  					showMsg(data.message, "success", 2000);
+	  					if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+						  //Ios
+						  window.webkit.messageHandlers.agree.postMessage(list);
+						} else if (/(Android)/i.test(navigator.userAgent)) {
+						  //Android终端
+						  window.AndroidMethod.agree(list);//android方法
+						}
+	  				}else{
+	  					showMsg(data.message, "info", 2000);
+	  					if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+						  //Ios
+						  window.webkit.messageHandlers.agree.postMessage(list);
+						} else if (/(Android)/i.test(navigator.userAgent)) {
+						  //Android终端
+						  window.AndroidMethod.agree(list);//android方法
+						}
+	  				}
+	  			}
+
+	  		})
 		 }else{
 		    showMsg("请仔细阅读并同意勾选协议", "info", 2000);
 		 }
